@@ -1,7 +1,5 @@
 package entities;
 
-import java.text.Format;
-
 public class Student {
 	public String name;
 	public double av1; // grade 1
