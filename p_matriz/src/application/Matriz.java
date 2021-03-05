@@ -25,6 +25,7 @@ public class Matriz {
 	    	}
 	    }
 
+	    UI.clearScreen();
 	    // Impressão da Matriz
 	    System.out.println();
 	    System.out.println("Impressão da Matriz");
