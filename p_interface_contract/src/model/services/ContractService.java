@@ -1,9 +1,7 @@
 package model.services;
 
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
 
 import model.entities.Contract;
 import model.entities.Installment;
@@ -18,7 +16,7 @@ public class ContractService {
 	public void processContract(Contract contract, int months) {
 		double basicQuota = contract.getTotalValue() / months;
 				
-		List<Installment> installments = new ArrayList<Installment>();
+		//List<Installment> installments = new ArrayList<Installment>();
 		
 		for (int x = 1; x <= months; x++) {
 			double parcialQuota = basicQuota + onlinePaymentService.paymentFee(basicQuota);
@@ -32,7 +30,7 @@ public class ContractService {
 	private Date addMonths(Date date, int n) {
 		Calendar cal = Calendar.getInstance();
 		cal.setTime(date);
-		cal.add(cal.MONTH, n);
+		cal.add(Calendar.MONTH, n);
 		
 		return cal.getTime();
 	}

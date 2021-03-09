@@ -9,7 +9,6 @@ import java.util.Scanner;
 import model.entities.Contract;
 import model.entities.Installment;
 import model.services.ContractService;
-import model.services.OnlinePaymentService;
 import model.services.PayPalService;
 
 public class Program {

@@ -17,6 +17,7 @@ public class SavingsAccounts {
 		
 		// Conta Normal
 		Account acc = new Account(1602, "Heleno", 200.00);
+		System.out.println(acc);
 		
 		// Conta Empresarial
 		BusinessAccount bacc = new BusinessAccount(1517, "Julia", 0.00, 1000.00);
