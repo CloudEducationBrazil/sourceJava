@@ -7,8 +7,11 @@ import model.entities.Contract;
 import model.entities.Installment;
 
 public class ContractService {
+	
+	// Declara a INTERFACE
 	private OnlinePaymentService onlinePaymentService;
 	
+	// Utiliza a INTERFACE no construtor utilizando INVERSÃO DE CONTROLE aonde irá receber uma INJEÇÃO DE DEPENDÊNCIA por uma outra Classe
 	public ContractService(OnlinePaymentService onlinePaymentService) {
 		this.onlinePaymentService = onlinePaymentService;
 	}
@@ -16,13 +19,13 @@ public class ContractService {
 	public void processContract(Contract contract, int months) {
 		double basicQuota = contract.getTotalValue() / months;
 				
-		//List<Installment> installments = new ArrayList<Installment>();
-		
 		for (int x = 1; x <= months; x++) {
 			double parcialQuota = basicQuota + onlinePaymentService.paymentFee(basicQuota);
 			double fullQuota = parcialQuota  + onlinePaymentService.interest(parcialQuota, x);
 			
 			Date dueDate = addMonths(contract.getDateContract(), x);
+			
+			// Adiciona ao objeto //List<Installment>
 			contract.getInstallments().add(new Installment(dueDate, fullQuota));
 		}
 	};
