@@ -7,6 +7,7 @@ import service.PrintService;
 public class Program {
 
 	public static void main(String[] args) {
+		// https://github.com/acenelio/generics1-java
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.print("How many values? ");
